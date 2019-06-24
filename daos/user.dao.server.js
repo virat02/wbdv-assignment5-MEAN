@@ -8,4 +8,9 @@ findUserByCredentials = (username, password) =>
 
 createUser = user =>
     userModel.create(user);
-    
+
+module.exports = {
+    findUserById,
+    findUserByCredentials,
+    createUser
+};

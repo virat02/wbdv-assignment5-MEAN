@@ -2,8 +2,7 @@ const mongoose = require('mongoose');
 
 const columnSchema = mongoose.Schema({
     title: String,
-    span: String,
-    widgets: {type: mongoose.Schema.Types.Array, ref: 'WidgetModel'}
-}, {collection: 'column'});
+    columns: {type: mongoose.Schema.Types.Array, ref: 'ColumnModel'}
+}, {collection: 'page'});
 
 module.exports = columnSchema;
