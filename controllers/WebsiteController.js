@@ -11,7 +11,7 @@ module.exports = app => {
             .then(response => res.json(response));
 
     const updateWebsite = (req, res) =>
-        websiteService.updateWebsite(req.params['websiteId'], req.body())
+        websiteService.updateWebsite(req.params['websiteId'], req.body)
             .then(response => res.json(response));
 
     const deleteWebsite = (req, res) =>
@@ -25,6 +25,6 @@ module.exports = app => {
     app.put('/api/websites/:websiteId', updateWebsite);
     app.delete('/api/websites/:websiteId', deleteWebsite);
     app.get('/api/websites/:websiteId', findWebsiteById);
-    app.get(' /api/websites', findAllWebsites);
+    app.get('/api/websites', findAllWebsites);
     app.post('/api/websites', createWebsite);
 };

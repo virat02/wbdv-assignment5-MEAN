@@ -6,8 +6,8 @@ const createUser = user=>
 const findUserById = userId =>
     userDao.findUserById(userId);
 
-const findUserByCredentials = (username, password) =>
-    userDao.findUserByCredentials(username, password);
+const findUserByCredentials = credentials =>
+    userDao.findUserByCredentials(credentials);
 
 const findAllUsers = () =>
     userDao.findAllUsers();

@@ -1,4 +1,5 @@
 const websiteModel = require("../models/WebsiteModel");
+const pageModel = require("../models/PageModel");
 
 const findPageById = (websiteId, pageId) =>
     websiteModel.findById(websiteId)
@@ -25,9 +26,14 @@ const updatePage = (websiteId, pageId, page) =>
         );
 
 
-const deletePage = (websiteId, pageId) =>
+const deletePage = (websiteId, pageId) => {
     websiteModel.findById(websiteId)
-        .then(website => website.pages.remove({"_id": pageId}));
+        .then(website => website.pages.remove({_id: pageId}));
+
+
+    pageModel.remove({_id: pageId});
+};
+
 
 module.exports = {
     findPageById,

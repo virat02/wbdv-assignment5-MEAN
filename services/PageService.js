@@ -1,7 +1,7 @@
 const pageDao = require('../daos/PageDao');
 
-const createPage = page =>
-    pageDao.createPage(page);
+const createPage = (websiteId, page) =>
+    pageDao.createPage(websiteId, page);
 
 const findPageById = (websiteId, pageId) =>
     pageDao.findPageById(websiteId, pageId);

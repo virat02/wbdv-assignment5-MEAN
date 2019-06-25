@@ -3,8 +3,8 @@ const userModel = require("../models/UserModel");
 const findUserById = userId =>
     userModel.findById(userId);
 
-const findUserByCredentials = (username, password) =>
-    userModel.findOne({username: username, password: password});
+const findUserByCredentials = credentials =>
+    userModel.findOne(credentials);
 
 const findAllUsers = () =>
     userModel.find();

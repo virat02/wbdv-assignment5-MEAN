@@ -11,11 +11,11 @@ module.exports = app => {
             .then(response => res.json(response));
 
     const login = (req, res) =>
-        userService.findUserByCredentials(req.body.username, req.body.password)
+        userService.findUserByCredentials(req.body)
             .then(response => res.json(response));
 
     const updateProfile = (req, res) =>
-        userService.updateUser(req.params['id'], req.body())
+        userService.updateUser(req.params['id'], req.body)
             .then(response => res.json(response));
 
     const deleteProfile = (req, res) =>
@@ -30,6 +30,6 @@ module.exports = app => {
     app.delete('/api/profile/:id', deleteProfile);
     app.get('/api/profile/:id', profile);
     app.get('/api/profile', findAllUsers);
+    app.post('/api/login', login);
     app.post('/api/register', register);
-    app.post('api/login', login);
 };
