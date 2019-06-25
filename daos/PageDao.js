@@ -5,6 +5,10 @@ const findPageById = (websiteId, pageId) =>
     websiteModel.findById(websiteId)
         .then(website => website.pages.id(pageId));
 
+const findAllPages = websiteId =>
+    websiteModel.findById(websiteId)
+        .then(website => website.pages);
+
 const createPage = (websiteId, page) =>
     websiteModel.findByIdAndUpdate(websiteId, {
         $push: { pages: page }
@@ -39,5 +43,6 @@ module.exports = {
     findPageById,
     createPage,
     updatePage,
-    deletePage
+    deletePage,
+    findAllPages
 };

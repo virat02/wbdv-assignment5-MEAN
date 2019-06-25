@@ -19,9 +19,13 @@ module.exports = app => {
         return res.sendStatus(200);
     };
 
+    const findAllPages = (req, res) =>
+        pageService.findAllPages(req.params['websiteId'])
+            .then(response => res.json(response));
 
     app.put('/api/websites/:websiteId/pages/:pageId', updatePage);
     app.delete('/api/websites/:websiteId/pages/:pageId', deleteWebsite);
     app.get('/api/websites/:websiteId/pages/:pageId', findPageById);
+    app.get('/api/websites/:websiteId/pages', findAllPages);
     app.post('/api/websites/:websiteId/pages', createPage);
 };

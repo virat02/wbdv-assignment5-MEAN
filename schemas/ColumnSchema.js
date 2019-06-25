@@ -3,7 +3,7 @@ const WidgetSchema = require('./WidgetSchema');
 
 const ColumnSchema = mongoose.Schema({
     title: String,
-    span: String,
+    span: Number,
     widgets: [WidgetSchema]
 });
 

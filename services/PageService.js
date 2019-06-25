@@ -12,9 +12,13 @@ const updatePage = (websiteId, pageId, page) =>
 const deletePage = (websiteId, pageId) =>
     pageDao.deletePage(websiteId, pageId);
 
+const findAllPages = websiteId =>
+    pageDao.findAllPages(websiteId);
+
 module.exports = {
     createPage,
     findPageById,
     updatePage,
-    deletePage
+    deletePage,
+    findAllPages
 };
