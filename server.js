@@ -1,6 +1,9 @@
 let express = require("express");
 let bodyParser = require("body-parser");
-const userContoller = require('./controllers/UserController');
+
+const userController = require('./controllers/UserController');
+const websiteController = require('./controllers/WebsiteController');
+const pageController = require("./controllers/PageController");
 
 require('./database/db')();
 
@@ -20,7 +23,9 @@ app.use(function(req, res, next) {
     next();
 });
 
-userContoller(app);
+userController(app);
+websiteController(app);
+pageController(app);
 
 app.listen(3000);
 

@@ -6,7 +6,7 @@ module.exports = app => {
         userService.createUser(req.body)
             .then(response => res.json(response));
 
-    const findUserById = (req, res) =>
+    const profile = (req, res) =>
         userService.findUserById(req.params['id'])
             .then(response => res.json(response));
 
@@ -18,7 +18,7 @@ module.exports = app => {
         userService.updateUser(req.params['id'], req.body())
             .then(response => res.json(response));
 
-    const deleteUser = (req, res) =>
+    const deleteProfile = (req, res) =>
         userService.deleteUser(req.params['id'])
             .then(response => res.json(response));
 
@@ -27,8 +27,8 @@ module.exports = app => {
             .then(response => res.json(response));
 
     app.put('/api/profile/:id', updateProfile);
-    app.delete('/api/profile/:id', deleteUser);
-    app.get('/api/profile/:id', findUserById);
+    app.delete('/api/profile/:id', deleteProfile);
+    app.get('/api/profile/:id', profile);
     app.get('/api/profile', findAllUsers);
     app.post('/api/register', register);
     app.post('api/login', login);
