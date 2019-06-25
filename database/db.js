@@ -1,8 +1,6 @@
 module.exports = function () {
     const mongoose = require('mongoose');
     const databaseName = 'whiteboard';
-    var   connectionString =
-        'mongodb://localhost/';
-    connectionString += databaseName;
-    mongoose.connect(connectionString);
+    let connectionString = 'mongodb://localhost/';
+    mongoose.connect(connectionString+databaseName);
 };
